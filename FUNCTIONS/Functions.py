@@ -90,4 +90,21 @@ spam1 (1)
 x= 34  #has no effect
 spam1(2)
         
+#Defaults should always be immutable objects
+
+def spam3(a,b=[]) :#default is a list
+    print(b)
+    return b
+
+x = spam3(1)
+x.append(99)
+x.append('Yow!')
+print(x)
+spam3(2) #b list value is updated
+
+
+#Defining Anonymous or Inline functions
+# use lambda where ever single expression is evaluated and returned
+add = lambda x,y : x+y
+add(3,2)
 
