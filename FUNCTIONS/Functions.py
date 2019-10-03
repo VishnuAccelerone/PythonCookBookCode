@@ -50,3 +50,12 @@ def minimum(*values,clip=None):
     return m
 
 print(minimum(1,2,3,4,-5,clip = 1))
+
+#Attaching Informational Metadata to Function arguments
+
+def add (x:int,y:int) ->int:
+    return x+y
+
+
+print(add(1,2))
+print(add('a','bee')) #still works
