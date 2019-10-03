@@ -120,3 +120,37 @@ print(word.split()[-1])
 print(word.split()[-1].lower())
 print(sorted(names,key = lambda name: name.split()[-1].lower()))
 print(sorted(names, key = lambda name:name.split()[-1].lower(),reverse =True))
+
+#Capturing Variables in anonymus functions
+
+x = 10
+a = lambda y : x+y
+x = 20
+b = lambda y: x+y
+print(a(10)) #expected result is 20
+print(b(10))#expected result is 30 but both are 30 due to the presant value of X
+#The problem here is that the value of x used  the lambda expression is a freee variable 
+#that gets bounded at runtime not the define time
+x = 10
+print(a(10))
+x = 20
+print(b(10))
+
+#OR
+
+x =10
+a = lambda y ,x=x : x+y
+x = 20
+b = lambda y, x=x:x+y
+print(a(10))
+print(b(10))
+funcs = [lambda x : x+n for n in range (5)]
+for f in funcs :
+    print(f(0)) #this expects lambda functions to remember the iteration variable at time of definition
+    
+#correct way
+funcs1 = [lambda x , n=n: x+n for n in range(5) ]
+for f in funcs1:
+    print(f(0))
+
+    
