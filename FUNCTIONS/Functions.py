@@ -31,3 +31,22 @@ def make_element(name,value,**attrs):
 
 
 print(make_element('item','Albatross',size = 'large' ,quantity = 6))
+
+#Writing Functions that only accept Keyword arguments
+
+def recv(maxsize,*,block):
+    print('Receives a message')
+    pass
+
+
+#recv(1024,True)      #Type error
+recv(1024,block=True)
+
+
+def minimum(*values,clip=None):
+    m = min(values)
+    if clip is not None:
+        m = clip if clip > m else m
+    return m
+
+print(minimum(1,2,3,4,-5,clip = 1))
