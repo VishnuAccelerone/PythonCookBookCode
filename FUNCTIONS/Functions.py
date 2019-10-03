@@ -69,3 +69,25 @@ a = my_func()
 b,c,d = my_func() #returns a tuple
 print (a)
 print (c)
+
+
+#Defining Functions With Default Arguments
+_no_value = object() #Creates empty object
+def spam(a,b =_no_value):
+    if b is _no_value:
+        print('no b value supplied')
+        
+spam(1)
+spam(1,2)
+
+#The values assigned as a default are bound only once at the time of function definition
+
+x = 42
+def spam1(a,b=x):
+    print(a,b)
+    
+spam1 (1)
+x= 34  #has no effect
+spam1(2)
+        
+
