@@ -59,3 +59,13 @@ def add (x:int,y:int) ->int:
 
 print(add(1,2))
 print(add('a','bee')) #still works
+
+#Returning Multiple values from a Function
+
+def my_func():
+    return 1,2,3
+
+a = my_func()
+b,c,d = my_func() #returns a tuple
+print (a)
+print (c)
