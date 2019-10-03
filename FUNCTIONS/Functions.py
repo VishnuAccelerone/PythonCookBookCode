@@ -108,3 +108,15 @@ spam3(2) #b list value is updated
 add = lambda x,y : x+y
 add(3,2)
 
+
+names = ['David Beazley','Brian Jones','Raymond Hettinger','Ned Batchelder']
+# sorted  Syntax : sorted(iterable, key, reverse)
+print(sorted(names))
+# split str.split(separator, maxsplit)
+word = 'geeks, for, geeks, Pawan'
+print(word.split(', ', 1)) 
+print(word.split(', ', 4)) 
+print(word.split()[-1])
+print(word.split()[-1].lower())
+print(sorted(names,key = lambda name: name.split()[-1].lower()))
+print(sorted(names, key = lambda name:name.split()[-1].lower(),reverse =True))
